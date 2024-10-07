@@ -1,5 +1,4 @@
 ﻿#include <iostream>
-
 #include <string>
 #include <iostream>
 
@@ -14,7 +13,8 @@ public:
 class DecoratedText : public Text {
 public:
     explicit DecoratedText(Text* text) : text_(text) {}
-    Text* text_;
+protected:
+    std::shared_ptr<Text> text_;
 };
 
 class ItalicText : public DecoratedText {
